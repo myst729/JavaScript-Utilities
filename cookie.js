@@ -1,4 +1,4 @@
-/* JavaScript Cookies */
+/* JavaScript Cookie */
 
 function CookieHandler() {
 
