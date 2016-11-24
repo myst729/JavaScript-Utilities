@@ -1,19 +1,17 @@
-function detectFlash() {
-  if(window.ActiveXObject) {
+function detectFlash () {
+  if (window.ActiveXObject) {
     try {
-      new ActiveXObject("ShockwaveFlash.ShockwaveFlash")
+      new ActiveXObject('ShockwaveFlash.ShockwaveFlash')
       return true
-    } catch(e) {
+    } catch (e) {
       return false
     }
   }
 
-  var plgs = navigator.plugins
-  if(!plgs.length) {
+  var plugins = navigator.plugins
+  if (!plugins.length) {
     return false
   }
 
-  return /Shockwave Flash/.test(Array.prototype.map.call(plgs, function(plg) {
-    return plg.name
-  }))
+  return /Shockwave Flash/.test(Array.prototype.map.call(plugins, plugin => plugin.name))
 }
